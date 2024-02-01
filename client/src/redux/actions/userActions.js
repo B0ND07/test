@@ -19,7 +19,10 @@ export const loginAction = (formData) => async (dispatch) => {
   try {
     const { data } = await axios.post(
       "https://api-i2ix.onrender.com/api/auth/login",
-      formData
+      formData, {
+    withCredentials: true,
+    
+}
     );
     
     if (data.user) {
@@ -39,7 +42,10 @@ export const registerAction = (formData) => async (dispatch) => {
   try {
     const { data } = await axios.post(
       "https://api-i2ix.onrender.com/api/auth/register",
-      formData
+      formData, {
+    withCredentials: true,
+  
+}
     );
  
     dispatch(setUser(data.user));
