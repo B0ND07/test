@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div
-        className="flex justify-center gap-20 my-6"
+        className="flex justify-center gap-15 md:gap-20 my-6"
        
       >
         <p>Privacy Notice</p>
