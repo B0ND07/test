@@ -24,7 +24,7 @@ exports.register = async (req, res, next) => {
     const { password, isAdmin, ...otherDetails } = user._doc;
     res.cookie('accessToken', accessToken, {maxAge: 900000}) //15m
     res.cookie('refreshToken', refreshToken, 
-    {maxAge: 86400000, secure: true, sameSite: 'None'}) //7d
+    {maxAge: 86400000, httpOnly: false, secure: true, sameSite: 'None'}) //7d
 return res.json({ user: user });
   } catch (err) {
     res.json(err)
@@ -52,7 +52,7 @@ exports.login = async (req, res, next) => {
     const { password, isAdmin, ...otherDetails } = user._doc;
     res.cookie('accessToken', accessToken, {maxAge: 60000})
     res.cookie('refreshToken', refreshToken, 
-    {maxAge: 300000, secure: true, sameSite: 'None'})
+    {maxAge: 300000, httpOnly: false, secure: true, sameSite: 'None'})
 return res.json({ user: user });
   } catch (err) {
     res.json(err)
