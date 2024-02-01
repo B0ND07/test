@@ -15,7 +15,7 @@ const Body = () => {
               Save $$$
               <br /> With Offers On Demand
             </h1>
-            <div className="flex gap-6 my-3">
+            <div className="flex flex-col md:flex-row gap-6 my-3">
               <AppStoreButton theme={"dark"} />
               <GooglePlayButton theme={"dark"} />
             </div>
